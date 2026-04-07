@@ -1,0 +1,176 @@
+---
+const points = [
+  {
+    title: 'Current Role - Skill-Wanderer',
+    desc: 'Full-Cycle Solutions Associate (03/2026 - now), focused on practical end-to-end web delivery.'
+  },
+  {
+    title: 'Core Skill - Frontend',
+    desc: 'ReactJS, responsive UI architecture, and product-focused frontend implementation.'
+  },
+  {
+    title: 'Core Skill - Backend',
+    desc: 'Node.js services, API integration, and stable frontend-backend collaboration.'
+  }
+]
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Astro portfolio for Netlify</title>
+    <style>
+      :root {
+        font-family: Georgia, "Times New Roman", serif;
+        color: #2e1d16;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 36px 20px 48px;
+        background:
+          radial-gradient(circle at 82% 8%, rgba(214, 126, 33, 0.26), transparent 40%),
+          linear-gradient(140deg, #fff2e5 0%, #eef5d8 100%);
+      }
+
+      .wrap {
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+
+      .tag {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #a15308;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 10px 0 14px;
+        font-size: clamp(2rem, 6vw, 3.4rem);
+      }
+
+      .lead {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        max-width: 680px;
+      }
+
+      .actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .actions a {
+        text-decoration: none;
+        background: #9e4f07;
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+      }
+
+      .actions a.ghost {
+        background: transparent;
+        color: #9e4f07;
+        border: 1px solid #9e4f07;
+      }
+
+      .grid {
+        margin-top: 34px;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(158, 79, 7, 0.2);
+        border-radius: 16px;
+        padding: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.1rem;
+      }
+
+      .card p {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+      }
+
+      .meta {
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.58);
+        border-radius: 14px;
+        padding: 16px 18px;
+        border: 1px solid rgba(158, 79, 7, 0.18);
+      }
+
+      .meta h3 {
+        margin: 0 0 10px;
+      }
+
+      .meta ul {
+        margin: 0;
+        padding-left: 18px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.55;
+      }
+
+      .contact {
+        margin-top: 26px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section>
+        <p class="tag">Portfolio • Astro</p>
+        <h1>Nguyen Ho Thien Thanh</h1>
+        <p class="lead">
+          Full-Cycle Solutions Associate at Skill-Wanderer, building web products with both frontend and
+          backend ownership.
+        </p>
+        <div class="actions">
+          <a href="#projects">View career path</a>
+          <a href="#contact" class="ghost">Contact</a>
+        </div>
+      </section>
+
+      <section id="projects" class="grid">
+        {points.map((point) => (
+          <article class="card">
+            <h2>{point.title}</h2>
+            <p>{point.desc}</p>
+          </article>
+        ))}
+      </section>
+
+      <section class="meta">
+        <h3>Career Snapshot</h3>
+        <ul>
+          <li>Name: Nguyen Ho Thien Thanh</li>
+          <li>Role: Full-Cycle Solutions Associate</li>
+          <li>Company: Skill-Wanderer (03/2026 - now)</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact">
+        <p>Email: thanh-nguyen@skill-wanderer.com</p>
+        <p>Tools: Web Development, ReactJS, Node.js, Frontend, Backend</p>
+      </section>
+    </main>
+  </body>
+</html>
