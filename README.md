@@ -49,8 +49,3 @@ Deploy Netlify:
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-## Notes
-
-- Moi project da co 1 portfolio landing page o route `/`.
-- Moi project da co file `netlify.toml` rieng de ban deploy nhanh.
-- Ban co the import tung folder project vao Netlify nhu 3 site doc lap.
