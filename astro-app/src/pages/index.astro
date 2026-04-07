@@ -1,16 +1,34 @@
 ---
-const points = [
+const experience = [
   {
-    title: 'Current Role - Skill-Wanderer',
-    desc: 'Full-Cycle Solutions Associate (03/2026 - now), focused on practical end-to-end web delivery.'
+    title: 'Skill-Wanderer - Full-Cycle Solutions Associate',
+    period: '03/2026 - Present',
+    desc: 'Architected Docker Compose microservices, optimized PostgreSQL persistence, engineered an Assignment Submission API with Google Drive integration, and redesigned Web Development and Git curriculum architecture with SEO-friendly learning routes.'
   },
   {
-    title: 'Core Skill - Frontend',
-    desc: 'ReactJS, responsive UI architecture, and product-focused frontend implementation.'
+    title: 'Apps Cyclone - Frontend Developer Intern',
+    period: '06/2025 - 08/2025',
+    desc: 'Built responsive ReactJS interfaces, designed reusable component modules, integrated RESTful APIs in Agile sprints, and improved client-side UX and performance under senior mentorship.'
   },
   {
-    title: 'Core Skill - Backend',
-    desc: 'Node.js services, API integration, and stable frontend-backend collaboration.'
+    title: 'Amazon Web Services Vietnam - Cloud Engineering Intern',
+    period: '10/2024 - 03/2025',
+    desc: 'Deployed a serverless CRUD platform with ReactJS and AWS Lambda, secured infrastructure through API Gateway, S3, and IAM, and monitored reliability via CloudWatch.'
+  }
+]
+
+const projects = [
+  {
+    title: 'Health Management Mobile & Web App',
+    period: '09/2024 - 05/2025 | Full-Stack Developer',
+    desc: 'Developed ReactJS web + React Native mobile clients, implemented Node.js/Express REST APIs with MongoDB, integrated an AI chatbot API, and optimized data fetching for real-time consistency.',
+    source: 'github.com/NXT1008/KLTN_App | github.com/NXT1008/KLTN_Frontend'
+  },
+  {
+    title: 'To-Do-List Website (Personal Project)',
+    period: '09/2025 - 10/2025 | Full-Stack Developer',
+    desc: 'Achieved strong Web Vitals (LCP 0.19s, CLS 0, INP 24ms), built serverless APIs with API Gateway + Lambda, used DynamoDB for persistence, and maintained 99.9% reliability with CloudWatch.',
+    source: 'github.com/nguyenhothienthanh/to-do-app'
   }
 ]
 ---
@@ -19,7 +37,7 @@ const points = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Astro portfolio for Netlify</title>
+    <title>Astro Portfolio - Nguyen Ho Thien Thanh</title>
     <style>
       :root {
         font-family: Georgia, "Times New Roman", serif;
@@ -49,7 +67,7 @@ const points = [
       }
 
       h1 {
-        margin: 10px 0 14px;
+        margin: 10px 0 10px;
         font-size: clamp(2rem, 6vw, 3.4rem);
       }
 
@@ -57,7 +75,12 @@ const points = [
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
-        max-width: 680px;
+        max-width: 760px;
+      }
+
+      .sublead {
+        margin-top: 6px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
       .actions {
@@ -84,10 +107,10 @@ const points = [
       }
 
       .grid {
-        margin-top: 34px;
+        margin-top: 22px;
         display: grid;
         gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       }
 
       .card {
@@ -103,10 +126,21 @@ const points = [
         font-size: 1.1rem;
       }
 
+      .period {
+        margin: 0 0 10px;
+        font-weight: 600;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
       .card p {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.5;
+      }
+
+      .source {
+        margin-top: 10px !important;
+        font-size: 0.92rem;
       }
 
       .meta {
@@ -128,48 +162,105 @@ const points = [
         line-height: 1.55;
       }
 
-      .contact {
-        margin-top: 26px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      .two-col {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
       }
     </style>
   </head>
   <body>
     <main class="wrap">
       <section>
-        <p class="tag">Portfolio • Astro</p>
+        <p class="tag">Portfolio - Astro</p>
         <h1>Nguyen Ho Thien Thanh</h1>
-        <p class="lead">
-          Full-Cycle Solutions Associate at Skill-Wanderer, building web products with both frontend and
-          backend ownership.
-        </p>
+        <p class="lead">Software Engineer | Full-Stack Developer | DevOps</p>
+        <p class="sublead">Ho Chi Minh City, Vietnam</p>
         <div class="actions">
-          <a href="#projects">View career path</a>
+          <a href="#experience">View experience</a>
+          <a href="#projects" class="ghost">View projects</a>
           <a href="#contact" class="ghost">Contact</a>
         </div>
       </section>
 
-      <section id="projects" class="grid">
-        {points.map((point) => (
+      <section id="contact" class="meta">
+        <h3>Contact</h3>
+        <ul>
+          <li>Phone: 0823292612</li>
+          <li>Email: nguyenhothienthanh.work@gmail.com</li>
+          <li>LinkedIn: www.linkedin.com/in/nguyen-ho-thien-thanh</li>
+          <li>Facebook: www.facebook.com/i.am.Ave.chuong</li>
+        </ul>
+      </section>
+
+      <section id="experience" class="grid">
+        {experience.map((item) => (
           <article class="card">
-            <h2>{point.title}</h2>
-            <p>{point.desc}</p>
+            <h2>{item.title}</h2>
+            <p class="period">{item.period}</p>
+            <p>{item.desc}</p>
           </article>
         ))}
       </section>
 
-      <section class="meta">
-        <h3>Career Snapshot</h3>
-        <ul>
-          <li>Name: Nguyen Ho Thien Thanh</li>
-          <li>Role: Full-Cycle Solutions Associate</li>
-          <li>Company: Skill-Wanderer (03/2026 - now)</li>
-        </ul>
+      <section id="projects" class="grid">
+        {projects.map((item) => (
+          <article class="card">
+            <h2>{item.title}</h2>
+            <p class="period">{item.period}</p>
+            <p>{item.desc}</p>
+            <p class="source">Source: {item.source}</p>
+          </article>
+        ))}
       </section>
 
-      <section id="contact" class="contact">
-        <p>Email: thanh-nguyen@skill-wanderer.com</p>
-        <p>Tools: Web Development, ReactJS, Node.js, Frontend, Backend</p>
+      <section class="two-col">
+        <article class="meta">
+          <h3>Top Skills</h3>
+          <ul>
+            <li>Back-End Web Development</li>
+            <li>Problem Solving</li>
+            <li>TypeScript</li>
+            <li>Web Development</li>
+            <li>ReactJS</li>
+            <li>Node.js</li>
+          </ul>
+        </article>
+        <article class="meta">
+          <h3>Education</h3>
+          <ul>
+            <li>HCMC University of Technology and Education</li>
+            <li>Engineer's Degree, Information Technology</li>
+            <li>08/2021 - 07/2025</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="two-col">
+        <article class="meta">
+          <h3>Certifications</h3>
+          <ul>
+            <li>JavaScript Fundamentals to Advanced: Full Stack Development</li>
+            <li>HTML Essential Training</li>
+            <li>Learning Python</li>
+            <li>Programming Foundations: Fundamentals</li>
+            <li>Preliminary English Test</li>
+          </ul>
+        </article>
+        <article class="meta">
+          <h3>Honors & Awards</h3>
+          <ul>
+            <li>Outstanding Student in Academic Achievement (2023-2024)</li>
+            <li>Five-Good Student Award, University Level (2023-2024)</li>
+            <li>Academic Encouragement Scholarship, Semester 2 (2023-2024)</li>
+          </ul>
+          <h3>Languages</h3>
+          <ul>
+            <li>Vietnamese (Native or Bilingual)</li>
+            <li>English (Elementary)</li>
+          </ul>
+        </article>
       </section>
     </main>
   </body>
