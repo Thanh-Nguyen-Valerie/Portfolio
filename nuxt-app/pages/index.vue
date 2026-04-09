@@ -1,3 +1,11 @@
+<script setup>
+useSeoMeta({
+  title: 'Nguyen Ho Thien Thanh | Full-Stack Developer Portfolio (Nuxt)',
+  description:
+    'Explore the portfolio of Nguyen Ho Thien Thanh, a Full-Stack Developer and DevOps Engineer showcasing projects, experience, and technical skills built with Nuxt.'
+})
+</script>
+
 <template>
   <main class="page">
     <section class="hero">
@@ -20,7 +28,7 @@
         <li>Phone: 0823292612</li>
         <li>Email: nguyenhothienthanh.work@gmail.com</li>
         <li>LinkedIn: www.linkedin.com/in/nguyen-ho-thien-thanh</li>
-        <li>Facebook: www.facebook.com/i.am.Ave.chuong</li>
+        <li>Facebook: www.facebook.com/i.am.Lamenth</li>
       </ul>
     </section>
 
